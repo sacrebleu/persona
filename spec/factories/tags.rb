@@ -1,8 +1,8 @@
 FactoryBot.define do
-  factory :site do
+  factory :tag do
 
     label 'Github'
-    persona 'www.github.com/sacrebleu'
+    value 'www.github.com/sacrebleu'
 
 
   end

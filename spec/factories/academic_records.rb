@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :position do
+  factory :academic_record do
 
 
 

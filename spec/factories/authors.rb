@@ -1,9 +1,13 @@
 FactoryBot.define do
-  factory :facade do
-    author
+  factory :author do
 
-    name "CV"
-    description  "My pretty little CV generator"
-    publication { Time.gm }
+    first_name "Jeremy"
+    last_name  "Botha"
+    date_of_birth { Time.strptime('1978-01-01', '%Y-%m-%d') }
+    nationalities "British"
+    current_location "London"
+    degree "B.Sc (Hons) Computer Science"
+
+
   end
 end

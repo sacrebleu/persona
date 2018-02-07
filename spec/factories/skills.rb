@@ -1,8 +1,10 @@
 FactoryBot.define do
-  factory :certification do
-
-
-
+  factory :skill do
 
   end
+
+  factory :facade_skill do
+    id { SecureRandom.uuid }
+  end
+
 end

@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :skill do
+  factory :title do
 
 
 
