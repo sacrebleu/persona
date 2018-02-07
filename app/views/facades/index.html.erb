@@ -1,0 +1,51 @@
+<page size="A4">
+  <sector id="header">
+    <author>
+      <left>
+        <name><%= @facade.author.display_name %></name>
+        <summary><%= @facade.summaries.current.description %></summary>
+      </left>
+      <right>
+        <%= render partial: "shared/tags", collection: @facade.author.tags %>
+      </right>
+    </author>
+    <headerbreak></headerbreak>
+    <info>
+      <%= render partial: "shared/info_slug", collection: @facade.author.information %>
+    </info>
+    <breadcrumbs><%= render partial: "shared/crumb", collection: @facade.breadcrumbs %></breadcrumbs>
+    <textblock>
+      <freeform><%= @facade.description %></freeform>
+    </textblock>
+  </sector>
+  <br>
+  <sector id="certs">
+    <sectorheader>Certifications</sectorheader>
+    <underline></underline>
+    <tabulate>
+      <row>
+        <pull-left><%= image_tag("aws-sol-arch.svg", height: "20x20") %><name>AWS Solutions Architect - Associate</name></pull-left>
+        <pull-left><%= image_tag("Sun_Microsystems_logo.svg", height: "20x20") %><name>Sun Certified Java Developer</name></pull-left>
+        <pull-left><%= image_tag("Sun_Microsystems_logo.svg", height: "20x20") %><name>Sun Certified Java Programmer</name></pull-left>
+      </row>
+    </tabulate>
+  </sector>
+  <sector id="skills">
+    <sectorheader>Skills</sectorheader>
+      <underline></underline>
+      <tabulate>
+        <row>
+          <%= render partial: "shared/skills_header_row", collection: Array.new(3, ["Tech", "Level", "Years"]) %>
+        </row>
+        <%= render partial: "shared/skills_row", collection: @facade.skills.by_level.in_groups_of(3) %>
+      </tabulate>
+  </sector>
+  <sector id="skills">
+    <sectorheader>Work History</sectorheader>
+    <underline></underline>
+    <%= render partial: "shared/position", locals: { position: @facade.positions.current } %>
+    <div class="page-break"></div>
+    <%= render partial: "shared/positions", collection: @facade.positions.prior.in_groups_of(3) %>
+  </sector>
+
+</page>

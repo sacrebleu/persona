@@ -1,0 +1,19 @@
+<% if position %>
+<history>
+  <jobtitle><%= position.job_title %></jobtitle>
+  <company><%= position.company_name %> (<url><%= position.company_website %></url>)
+    <br>
+    <%= position.friendly_joined %> &#x2192; <%= position&.friendly_departed %></company>
+  <textblock>
+    <freeform><%= position.description %></freeform>
+  </textblock>
+  <% if position.achievements.any? %>
+      <achievements>Key achievements:</achievements>
+  <ul>
+    <%= render partial: "/shared/item", collection: position.achievements %>
+  </ul>
+  <% end %>
+  <span>Technologies:</span><%= render partial: "shared/crumb", collection: position.skills.map(&:display_name) %>
+  <p></p>
+</history>
+<% end %>

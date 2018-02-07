@@ -1,0 +1,356 @@
+page {
+    background: white;
+    display: block;
+    margin: 2cm auto;
+    margin-bottom: 3cm;
+}
+page[size="A4"] {
+    width: 21cm;
+    /*height: 29.7cm;*/
+}
+page[size="A4"][layout="portrait"] {
+    width: 29.7cm;
+    height: 21cm;
+}
+page[size="A3"] {
+    width: 29.7cm;
+    height: 42cm;
+}
+page[size="A3"][layout="portrait"] {
+    width: 42cm;
+    height: 29.7cm;
+}
+page[size="A5"] {
+    width: 14.8cm;
+    height: 21cm;
+}
+page[size="A5"][layout="portrait"] {
+    width: 21cm;
+    height: 14.8cm;
+}
+@media print {
+    body, page {
+        margin: 0mm;
+        box-shadow: 0;
+    }
+}
+
+@media screen {
+    .page-break	{ height:10px; border-top:1px dotted #999; margin-bottom:13px; }
+}
+@media print {
+    .page-break { height:0; page-break-before:always; margin:0; padding-top: 20mm; border-top:none; }
+}
+
+headerbreak {
+    border-top: 0.5mm solid #66aaa2;
+    width: inherit;
+    display: block;
+    clear: both;
+    height: 0.5mm;
+    border-bottom: 0.5mm solid #aad5d6;
+}
+
+breadcrumbs {
+    width: inherit;
+    display: table;
+    background: #8fc8c8;
+    border-bottom: 0.5mm solid #aad5d6;
+    color: #ffffff;
+    font-size: 2.5mm;
+    font-weight: bold;
+    height: 5mm;
+    vertical-align: middle;
+}
+
+breadcrumbs span {
+    padding-left: 1mm;
+    padding-right: 1mm;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin-bottom: 2mm;
+}
+
+@page { size: auto;  margin: 0mm; }
+
+page sector {
+    /*padding-top: 5mm;*/
+    margin-left: 10mm;
+    font-size: 3.2mm; /* approximately 12pt on A4 */
+    width: 19cm;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    page-break-after: auto;
+}
+
+page underline {
+    height: 0.75mm;
+    display: block;
+    background: linear-gradient(to right, #66aaa2 0%, #c1eced 80%);
+    width: 30mm;
+    margin-top: 0.5mm;
+    margin-bottom: 3mm;
+}
+
+sector sectorheader {
+    font-size: 4.5mm;
+    display: block;
+    color: #4296aa;
+}
+
+author {
+    width: inherit;
+    display: block;
+    padding-top: 10mm;
+}
+
+author left {
+    display: inherit;
+    float: left;
+    width: 80mm;
+}
+
+author left name {
+    font-size: 6mm;
+    color: #000020;
+    margin-bottom: 1.5mm;
+}
+
+author left summary {
+    color: #344455;
+    padding-top: 1.5mm;
+    font-style: italic;
+    font-size: 4mm;
+    margin-bottom: 1.5mm;
+}
+
+author right {
+    display: table;
+    float: right;
+    width: 31mm;
+    font-size: 3mm;
+}
+
+author right row {
+    display: table-row;
+    font-size: inherit;
+}
+
+author right icon {
+    display: table-cell;
+    text-align: right;
+    padding-right: 3mm;
+}
+
+author right bodytext {
+    color: #999999;
+    text-align: right;
+    display: table-cell;
+    text-align: right
+}
+
+info {
+    padding-top: 2mm;
+    display: table;
+    width: inherit;
+    background: #def0f3;
+    padding-bottom: 2mm;
+    font-size: 3.5mm;
+    border-bottom: 0.5mm solid #aad5d6;
+}
+
+info row {
+    display: table-row;
+}
+
+info row title {
+    /*float: left;*/
+    width: 27mm;
+    padding-left: 3mm;
+    display: table-cell;
+    white-space: nowrap;
+    padding-top: 0.5mm;
+    padding-bottom: 0.5mm;
+    padding-right: 4mm;
+}
+
+info row body {
+    display: table-cell;
+    padding-top: 0.5mm;
+}
+
+textblock {
+    display: block;
+    padding-left: 2mm;
+    width: 185mm;
+    padding-right: 2mm;
+    margin-top: 2mm;
+    clear: left;
+}
+
+textblock freeform {
+    widows: 2;
+    orphans: 2;
+    text-align: justify;
+    hyphens: auto;
+    margin-left: inherit;
+    width: inherit;
+    display: block;
+    white-space: pre-line;
+    padding: inherit;
+}
+
+sector tabulate {
+    margin-top: 3mm;
+    display: table;
+    width: 19cm;
+    color: #789e9f;
+    margin-bottom: 3mm;
+}
+
+sector tabulate row {
+    display: table-row;
+    padding-bottom: 0.5mm;
+}
+
+sector tabulate row heading {
+    display: table-cell;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-top: 0.25mm;
+    padding-bottom: 0.5mm;
+}
+
+sector tabulate row:nth-child(even) { background: #f0f6f9
+}
+sector tabulate row:nth-child(odd) { background: #FFF }
+
+
+sector tabulate row name {
+    display: table-cell;
+    padding-top: 0.25mm;
+    padding-left: 0.25mm;
+}
+
+sector tabulate row value {
+    display: table-cell;
+}
+
+sector tabulate row year {
+    display: table-cell;
+}
+
+sector tabulate row pull-left {
+    float: left;
+    clear: right;
+    padding-left: 1.5mm;
+    display: block;
+}
+
+sector tabulate row pull-left img {
+    float: left;
+    clear: right;
+    display: inherit;
+}
+
+sector tabulate row pull-left name {
+    display: inherit;
+    clear: right;
+    height: 5mm;
+    float: left;
+    vertical-align: middle;
+    padding-left: 1mm;
+    padding-top: 0.5mm;
+    padding-right: 2mm;
+    margin-bottom: 3mm;
+}
+
+sector tabulate row name[level="expert"],year[level="expert"],value[level="expert"]:before {
+    color: #134d4b;
+}
+
+sector tabulate row name[level="intermediate"],year[level="intermediate"],value[level="intermediate"]:before {
+    color: #a2aaad;
+}
+
+sector tabulate row value:before {
+    content: attr(level);
+}
+
+sector history {
+    page-break-inside: avoid;
+}
+
+sector history achievements {
+    margin-left: 4mm;
+    padding-top: 2mm;
+    display: block;
+}
+
+sector history ul {
+    margin-top: 0mm;
+    margon-bottom: 0mm;
+    display: block;
+}
+
+sector history jobtitle {
+    display: block;
+    float:left;
+    font-weight: 500;
+    font-size: 3.5mm;
+    color: #4296aa;
+    margin-bottom: 0.5mm;
+}
+
+sector history company {
+    display: block;
+    padding-left: 3mm;
+    float: left;
+    clear: left;
+    font-size: 2.8mm;
+    color: #7f97a0;
+    margin-bottom: 2mm;
+}
+
+
+sector history company url {
+    text-decoration: underline;
+}
+sector history dates {
+    display: block;
+    padding-left: 3mm;
+    padding-top: 0.75mm;
+    float: left;
+    height: 5mm;
+    font-size: 2.8mm;
+    color: #8da8b2;
+}
+
+sector history span {
+    display:inline-block;
+    /**
+     * These numbers set in ems mean that, at its narrowest, a lozenge will be
+     * the same width as the `line-height` set on the `html` element.
+     * This allows us to use the `.loz` in almost any `font-size` we wish.
+     */
+    margin-top: 0.5mm;
+    font-size: 2.5mm;
+    min-width:    5mm;
+    padding-right: 0.5mm;
+    padding-top: 0.5mm;
+    padding-left:  0.75mm;
+    /* =1.50em */
+    text-align:center;
+    /*background-color: #79bbce;*/
+    color: #79bbce; /* Override this color in your theme stylesheet */
+
+    /**
+     * Normally we’d use border-radius:100%; but instead here we just use an
+     * overly large number; `border-radius:100%;` would create an oval on
+     * non-square elements whereas we just want to round the ends of an element.
+     */
+    /*border-radius:1mm;*/
+}
