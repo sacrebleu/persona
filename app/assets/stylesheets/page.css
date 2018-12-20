@@ -354,3 +354,10 @@ sector history span {
      */
     /*border-radius:1mm;*/
 }
+
+sector history span .postscript {
+    font-size: 3mm;
+    color: #8da8b2;
+    float: left;
+    display: block;
+}

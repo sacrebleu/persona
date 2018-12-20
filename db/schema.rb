@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20180207211033) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["id"], name: "sqlite_autoindex_achievements_1", unique: true
   end
 
   create_table "authors", id: :string, force: :cascade do |t|
@@ -29,7 +28,6 @@ ActiveRecord::Schema.define(version: 20180207211033) do
     t.string "degree"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["id"], name: "sqlite_autoindex_authors_1", unique: true
   end
 
   create_table "certifications", id: :string, force: :cascade do |t|
@@ -39,13 +37,11 @@ ActiveRecord::Schema.define(version: 20180207211033) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "facade_id", limit: 36
-    t.index ["id"], name: "sqlite_autoindex_certifications_1", unique: true
   end
 
   create_table "facade_skills", id: :string, force: :cascade do |t|
     t.string "facade_id", limit: 36
     t.string "skill_id", limit: 36
-    t.index ["id"], name: "sqlite_autoindex_facade_skills_1", unique: true
   end
 
   create_table "facades", id: :string, limit: 36, force: :cascade do |t|
@@ -55,13 +51,11 @@ ActiveRecord::Schema.define(version: 20180207211033) do
     t.date "publication"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["id"], name: "sqlite_autoindex_facades_1", unique: true
   end
 
   create_table "position_skills", id: :string, force: :cascade do |t|
     t.string "position_id", limit: 36
     t.string "skill_id", limit: 36
-    t.index ["id"], name: "sqlite_autoindex_position_skills_1", unique: true
   end
 
   create_table "positions", id: :string, force: :cascade do |t|
@@ -74,7 +68,6 @@ ActiveRecord::Schema.define(version: 20180207211033) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "facade_id", limit: 36
-    t.index ["id"], name: "sqlite_autoindex_positions_1", unique: true
   end
 
   create_table "skills", id: :string, force: :cascade do |t|
@@ -87,7 +80,6 @@ ActiveRecord::Schema.define(version: 20180207211033) do
     t.boolean "suppress", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["id"], name: "sqlite_autoindex_skills_1", unique: true
   end
 
   create_table "summaries", id: :string, force: :cascade do |t|
@@ -95,7 +87,6 @@ ActiveRecord::Schema.define(version: 20180207211033) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "facade_id", limit: 36
-    t.index ["id"], name: "sqlite_autoindex_summaries_1", unique: true
   end
 
   create_table "tags", id: :string, force: :cascade do |t|
@@ -105,7 +96,6 @@ ActiveRecord::Schema.define(version: 20180207211033) do
     t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["id"], name: "sqlite_autoindex_tags_1", unique: true
   end
 
 end

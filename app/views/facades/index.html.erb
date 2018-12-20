@@ -13,7 +13,7 @@
     <info>
       <%= render partial: "shared/info_slug", collection: @facade.author.information %>
     </info>
-    <breadcrumbs><%= render partial: "shared/crumb", collection: @facade.breadcrumbs %></breadcrumbs>
+    <breadcrumbs><%= render partial: "shared/crumb", collection: @facade.breadcrumbs.sort %></breadcrumbs>
     <textblock>
       <freeform><%= @facade.description %></freeform>
     </textblock>
@@ -40,12 +40,15 @@
         <%= render partial: "shared/skills_row", collection: @facade.skills.by_level.in_groups_of(3) %>
       </tabulate>
   </sector>
-  <sector id="skills">
+  <sector id="history">
     <sectorheader>Work History</sectorheader>
     <underline></underline>
     <%= render partial: "shared/position", locals: { position: @facade.positions.current } %>
     <div class="page-break"></div>
+    <% pp @facade.positions.prior.in_groups_of(3).inspect %>
     <%= render partial: "shared/positions", collection: @facade.positions.prior.in_groups_of(3) %>
+
+    <span class="postscript">Prior positions available on request</span>
   </sector>
 
 </page>
