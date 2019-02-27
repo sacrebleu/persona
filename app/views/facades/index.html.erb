@@ -13,7 +13,7 @@
     <info>
       <%= render partial: "shared/info_slug", collection: @facade.author.information %>
     </info>
-    <breadcrumbs><%= render partial: "shared/crumb", collection: @facade.breadcrumbs.sort %></breadcrumbs>
+    <breadcrumbs><%= render partial: "shared/title_crumb", collection: @facade.breadcrumbs.sort %></breadcrumbs>
     <textblock>
       <freeform><%= @facade.description %></freeform>
     </textblock>

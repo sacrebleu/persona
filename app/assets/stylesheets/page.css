@@ -349,6 +349,32 @@ sector history tech {
 
 }
 
+sector history tspan {
+    display:inline-block;
+    /**
+     * These numbers set in ems mean that, at its narrowest, a lozenge will be
+     * the same width as the `line-height` set on the `html` element.
+     * This allows us to use the `.loz` in almost any `font-size` we wish.
+     */
+    margin-top: 0.5mm;
+    font-size: 2.5mm;
+    min-width:    5mm;
+    padding-right: 0.5mm;
+    padding-top: 0.5mm;
+    padding-left:  0.75mm;
+    /* =1.50em */
+    text-align:center;
+    /*background-color: #79bbce;*/
+    color: #79bbce; /* Override this color in your theme stylesheet */
+
+    /**
+     * Normally we’d use border-radius:100%; but instead here we just use an
+     * overly large number; `border-radius:100%;` would create an oval on
+     * non-square elements whereas we just want to round the ends of an element.
+     */
+    /*border-radius:1mm;*/
+}
+
 sector history span {
     display:inline-block;
     /**
