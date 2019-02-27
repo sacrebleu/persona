@@ -13,7 +13,11 @@
     <%= render partial: "/shared/item", collection: position.achievements %>
   </ul>
   <% end %>
-  <span>Technologies:</span><%= render partial: "shared/crumb", collection: position.skills.map(&:display_name) %>
+  <%
+    col = position.skills.each_with_index.map { |x,i| [x.display_name, i <  position.skills.length - 1] }
+  %>
+
+  <tech>Technologies: </tech><%= render partial: "shared/crumb", collection: col  %>
   <p></p>
 </history>
 <% end %>

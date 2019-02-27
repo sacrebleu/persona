@@ -83,11 +83,12 @@ My role involves support and best practice advocacy for our migration to AWS, an
 
 Achievement.create([{
                         position_id: p.id, description: "Troubleshooting performance issues in our development AWS environment"},
-                    { position_id: p.id, description: "Implementstion of EKS as a technical platform for our integration with Whatsapp"},
-                    { position_id: p.id, description: "Implementation and support of Prometheus-based metrics"}
+                    { position_id: p.id, description: "Implementation of EKS as a technical platform for our integration with Whatsapp"},
+                    { position_id: p.id, description: "Implementation of Prometheus across various platforms"},
+                    { position_id: p.id, description: "Design and implementation of production systems in AWS, EKS and Kubernetes."}
                    ])
 
-p.skills = Skill.where(name: ['Java', 'Ruby', 'AWS', 'Terraform', 'Puppet', 'Sql', 'Jenkins', 'Kubernetes', 'Prometheus', 'Travis CI','Grafana'])
+p.skills = Skill.where(name: ['Java', 'Ruby', 'AWS', 'Terraform', 'Puppet', 'Sql', 'Jenkins', 'Kubernetes', 'Prometheus', 'Travis CI','Grafana', 'Ansible'])
 p.save
 
 p = Position.create(

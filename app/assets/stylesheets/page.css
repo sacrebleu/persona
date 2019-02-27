@@ -329,6 +329,26 @@ sector history dates {
     color: #8da8b2;
 }
 
+sector history tech {
+    display:inline-block;
+    /**
+     * These numbers set in ems mean that, at its narrowest, a lozenge will be
+     * the same width as the `line-height` set on the `html` element.
+     * This allows us to use the `.loz` in almost any `font-size` we wish.
+     */
+    margin-top: 0.5mm;
+    font-size: 2.5mm;
+    min-width:    3mm;
+    padding-right: 1mm;
+    padding-top: 0.25mm;
+    padding-left:  0.25mm;
+    /* =1.50em */
+    text-align:center;
+    /*background-color: #79bbce;*/
+    color: #69abbe; /* Override this color in your theme stylesheet */
+
+}
+
 sector history span {
     display:inline-block;
     /**
@@ -338,10 +358,10 @@ sector history span {
      */
     margin-top: 0.5mm;
     font-size: 2.5mm;
-    min-width:    5mm;
-    padding-right: 0.5mm;
-    padding-top: 0.5mm;
-    padding-left:  0.75mm;
+    min-width:    3mm;
+    padding-right: 0.25mm;
+    padding-top: 0.25mm;
+    padding-left:  0.25mm;
     /* =1.50em */
     text-align:center;
     /*background-color: #79bbce;*/
@@ -353,6 +373,11 @@ sector history span {
      * non-square elements whereas we just want to round the ends of an element.
      */
     /*border-radius:1mm;*/
+}
+
+sector history sep {
+    min-width:    1mm;
+    /*background-color: #ff0000;*/
 }
 
 sector history span .postscript {
