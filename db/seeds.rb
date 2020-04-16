@@ -37,25 +37,25 @@ Skill.create(
         {name: 'REST', level: 3, years: 6,  major: true, suppress: true},
         {name: 'Amqp', level: 3, years: 4, major: true, suppress: false},
         {name: 'FIX', level: 3, years: 4,  major: true, suppress: false},
-        {name: 'Terraform', level: 3, years: 2, major: true, suppress: false},
+        {name: 'Terraform', level: 3, years: 3, major: true, suppress: false},
         {name: 'Ansible', level: 3, years: 4, major: true, suppress: false},
-        {name: 'AWS', level: 4, years: 2, major: true},
-        {name: 'Jsp', level: 2, years: 5,  suppress: true},
+        {name: 'AWS', level: 4, years: 3, major: true},
         {name: 'REDIS', level: 2, years: 3, suppress: true},
         {name: 'Influxdb', level: 2, years: 2, suppress: true},
         {name: 'Packer', level: 2, years: 2, suppress: true},
         {name: 'Maven', level: 1, years: 8, suppress: true},
         {name: 'Javascript', level: 1, years: 5, suppress: true},
         {name: 'Rails', level: 1, years: 4, major: true, suppress: true},
-        {name: 'Python', level: 1, years: 2, major: false, suppress: false},
+        {name: 'Python', level: 2, years: 2, major: false, suppress: false},
         {name: 'Travis_CI', level: 2, years: 3, suppress: false},
         {name: 'Grafana', level: 2, years: 3, suppress: false},
-        {name: 'Prometheus', level: 3, years: 3, major: true, suppress: true},
+        {name: 'Prometheus', level: 3, years: 3, major: true, suppress: false},
         {name: 'Hibernate', level: 2, years: 2,major: false, suppress: false},
         {name: 'Elk', level: 2, years: 1, major: false, suppress: false},
-        {name: 'Consul', level: 2, years: 1, major: false, suppress: false},
+        {name: 'Consul', level: 2, years: 2, major: false, suppress: false},
+        {name: 'Nomad', level: 1, years: 1, major: false, suppress: false},
         {name: 'Puppet', level: 2, years: 2, suppress: false},
-        {name: 'Kubernetes', level: 2, years: 1,  major: true, suppress: false},
+        {name: 'Kubernetes', level: 2, years: 2,  major: true, suppress: false},
         {name: 'CORBA', level: 2, years: 3, tag: '+',  suppress: false}])
 
 facade.skills = Skill.all
@@ -77,18 +77,22 @@ p = Position.create(
     company_name: "Nexmo",
     company_website: "www.nexmo.com",
     description: "In September 2018 I moved to Nexmo, where I was employed as a Site Reliability Engineer.\n
-My role involves support and best practice advocacy for our migration to AWS, and the development and demonstration of technical POCs in the AWS cloud environment that developers can then leverage to begin migrating their services across to AWS."
+My role involves support and best practice advocacy for our migration to AWS, and the development and
+demonstration of technical POCs in the AWS cloud environment that developers can then leverage to begin
+migrating their services across to AWS.\n
+I am also generally responsible for monitoring and instrumentation of systems in AWS."
 )
 
-
 Achievement.create([{
-                        position_id: p.id, description: "Troubleshooting performance issues in our development AWS environment"},
-                    { position_id: p.id, description: "Implementation of EKS as a technical platform for our integration with Whatsapp"},
-                    { position_id: p.id, description: "Implementation of Prometheus across various platforms"},
-                    { position_id: p.id, description: "Design and implementation of production systems in AWS, EKS and Kubernetes."}
+                        position_id: p.id, description: "Troubleshooting performance issues in our development and production AWS environments"},
+                    { position_id: p.id, description: "Implementation of EKS as a platform for our integration with Whatsapp, and supporting it as it grew to over a million messages a day"},
+                    { position_id: p.id, description: "Implementation of Prometheus and Victoria Metrics across various platforms."},
+                    { position_id: p.id, description: "General software development of production, support and instrumentation systems for EKS."},
+                    { position_id: p.id, description: "Automation of Couchbase cluster creation and XDCR establishment both within and across Cloud providers."},
+                    { position_id: p.id, description: "Implementation of Atlantis as a CI/CD pipeline for terraform pull requests in AWS."}
                    ])
 
-p.skills = Skill.where(name: ['Java', 'Ruby', 'AWS', 'Terraform', 'Puppet', 'Sql', 'Jenkins', 'Kubernetes', 'Prometheus', 'Travis CI','Grafana', 'Ansible'])
+p.skills = Skill.where(name: ['Java', 'Ruby', 'AWS', 'Terraform', 'Puppet', 'Sql', 'Jenkins', 'Kubernetes', 'Prometheus', 'Grafana', 'Consul', 'Nomad'])
 p.save
 
 p = Position.create(
@@ -133,8 +137,7 @@ I managed a team of four people comprising two developers and two testers; our f
 the FX section of our platform."
 )
 
-Achievement.create([{
-                        position_id: p.id, description: "Re-engineered our event-driven email notification platform"},
+Achievement.create([{position_id: p.id, description: "Re-engineered our event-driven email notification platform"},
                     { position_id: p.id, description: "Re-engineered our core pricing / quoting system in order to make it distributed and concurrent"},
                     { position_id: p.id, description: "Performed general performance tuning and performance-focussed analysis of our codebase"},
                     { position_id: p.id, description: "Created and deployed a CI environment using Jenkins"},
