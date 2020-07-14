@@ -10,7 +10,7 @@ author = Author.create(first_name: 'Jeremy', last_name: 'Botha', date_of_birth: 
               nationalities: 'British', current_location: 'London', degree: 'B.Sc (Hons) Computer Science')
 
 
-facade = Facade.create(author_id: Author.first.id, name: "Jeremy Botha", description: "I am an experienced developer with an interest in functional programming, application design, systems
+facade = Facade.create(author_id: Author.first.id, name: "Jeremy Botha", description: "I am an experienced software engineer with an interest in functional programming, application design, systems
 integration and performance tuning. I have a proven record of developing and extending distributed systems
 based on CORBA, JMS, SOAP, FIX and restful APIs in both Java and Ruby. I have extensive experience in both
 Telecommunications and Financial Services, and am at home developing and supporting server-side, client-side or
@@ -39,19 +39,22 @@ Skill.create(
         {name: 'FIX', level: 3, years: 4,  major: true, suppress: false},
         {name: 'Terraform', level: 3, years: 3, major: true, suppress: false},
         {name: 'Ansible', level: 3, years: 4, major: true, suppress: false},
-        {name: 'AWS', level: 4, years: 3, major: true},
+        {name: 'Puppet', level: 3, years: 4, major: false, suppress: false},
+        {name: 'AWS', level: 4, years: 4, major: true},
         {name: 'REDIS', level: 2, years: 3, suppress: true},
         {name: 'Influxdb', level: 2, years: 2, suppress: true},
         {name: 'Packer', level: 2, years: 2, suppress: true},
         {name: 'Maven', level: 1, years: 8, suppress: true},
         {name: 'Javascript', level: 1, years: 5, suppress: true},
-        {name: 'Rails', level: 1, years: 4, major: true, suppress: true},
+        {name: 'Rails', level: 2, years: 4, major: true, suppress: true},
         {name: 'Python', level: 2, years: 2, major: false, suppress: false},
         {name: 'Travis_CI', level: 2, years: 3, suppress: false},
         {name: 'Grafana', level: 2, years: 3, suppress: false},
         {name: 'Prometheus', level: 3, years: 3, major: true, suppress: false},
+        {name: 'Couchbase', level: 3, years: 1, major: false, suppress: false},
+        {name: 'Atlantis', level: 3, years: 1, major: false, suppress: false},
         {name: 'Hibernate', level: 2, years: 2,major: false, suppress: false},
-        {name: 'Elk', level: 2, years: 1, major: false, suppress: false},
+        {name: 'Elk', level: 3, years: 2, major: false, suppress: false},
         {name: 'Consul', level: 2, years: 2, major: false, suppress: false},
         {name: 'Nomad', level: 1, years: 1, major: false, suppress: false},
         {name: 'Puppet', level: 2, years: 2, suppress: false},
@@ -92,7 +95,7 @@ Achievement.create([{
                     { position_id: p.id, description: "Implementation of Atlantis as a CI/CD pipeline for terraform pull requests in AWS."}
                    ])
 
-p.skills = Skill.where(name: ['Java', 'Ruby', 'AWS', 'Terraform', 'Puppet', 'Sql', 'Jenkins', 'Kubernetes', 'Prometheus', 'Grafana', 'Consul', 'Nomad'])
+p.skills = Skill.where(name: ['Java', 'Ruby', 'AWS', 'Terraform', 'Puppet', 'Sql', 'Jenkins', 'Kubernetes', 'Prometheus', 'Grafana', 'Consul', 'Nomad', 'Couchbase', 'Atlantis'])
 p.save
 
 p = Position.create(
@@ -103,10 +106,10 @@ p = Position.create(
                 company_name: "CurrencyCloud",
                 company_website: "www.currencycloud.com",
                 description: "In June 2016 I was promoted to Head of Engineering, Systems Capability at Currency Cloud.\n
-My remit is the performance, availability and scalability of our software systems as a whole, from front-ends and
+My remit was the performance, availability and scalability of our software systems as a whole, from front-ends and
 our APIs down to the database and AMQP level.\n
-This involves guidance and oversight during the design process; reviewing, extending and performance-tuning
-service level code and support libraries used by the feature delivery teams, as well as ensuring that we capture
+This involved guidance and oversight during the design process; reviewing, extending and performance-tuning
+service level code and support libraries used by the feature delivery teams, as well as ensuring that we captured
 usable metrics via statsd and logstash."
 )
 

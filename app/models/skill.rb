@@ -2,7 +2,7 @@ class Skill < ApplicationRecord
   has_one :facade, through: :facade_skill
   has_many :positions, through: :facade_position
 
-  scope :by_level, -> { order(level: :desc).order(years: :desc)}
+  scope :by_level, -> { order(level: :desc).order(years: :desc).order(name: :desc)}
 
   def display_level
     %w[beginnner intermediate experienced skilled expert][level]
