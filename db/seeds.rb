@@ -54,12 +54,13 @@ Skill.create(
         {name: 'Couchbase', level: 3, years: 1, major: false, suppress: false},
         {name: 'Atlantis', level: 3, years: 1, major: false, suppress: false},
         {name: 'Hibernate', level: 2, years: 2,major: false, suppress: false},
-        {name: 'Elk', level: 3, years: 2, major: false, suppress: false},
+        {name: 'Elk', level: 3, years: 3, major: false, suppress: false},
         {name: 'Consul', level: 2, years: 2, major: false, suppress: false},
         {name: 'Nomad', level: 1, years: 1, major: false, suppress: false},
         {name: 'Puppet', level: 2, years: 2, suppress: false},
         {name: 'Kubernetes', level: 2, years: 2,  major: true, suppress: false},
-        {name: 'CORBA', level: 2, years: 3, tag: '+',  suppress: false}])
+        {name: 'CORBA', level: 2, years: 3, tag: '+',  suppress: false},
+        {name: 'Kafka', level: 2, years: 2, tag: '+',  suppress: false}])
 
 facade.skills = Skill.all
 
@@ -79,23 +80,18 @@ p = Position.create(
     departed:  nil,
     company_name: "Nexmo",
     company_website: "www.nexmo.com",
-    description: "In September 2018 I moved to Nexmo, where I was employed as a Site Reliability Engineer.\n
-My role involves support and best practice advocacy for our migration to AWS, and the development and
-demonstration of technical POCs in the AWS cloud environment that developers can then leverage to begin
-migrating their services across to AWS.\n
-I am also generally responsible for monitoring and instrumentation of systems in AWS."
+    description: "At NexMo I am responsible for providing AWS technology knowledge, advice and support to development teams as they migrate our systems to AWS. I am also generally responsible for monitoring and instrumentation of systems in AWS and for the design and provisioning of sections of our AWS infrastructure as a whole."
 )
 
-Achievement.create([{
-                        position_id: p.id, description: "Troubleshooting performance issues in our development and production AWS environments"},
+Achievement.create([{ position_id: p.id, description: "Troubleshooting performance issues in our development and production AWS environments"},
                     { position_id: p.id, description: "Implementation of EKS as a platform for our integration with Whatsapp, and supporting it as it grew to over a million messages a day"},
                     { position_id: p.id, description: "Implementation of Prometheus and Victoria Metrics across various platforms."},
-                    { position_id: p.id, description: "General software development of production, support and instrumentation systems for EKS."},
+                    { position_id: p.id, description: "Development of standalone Ruby applications and Ruby lambdas for instrumentation and systems management."},
                     { position_id: p.id, description: "Automation of Couchbase cluster creation and XDCR establishment both within and across Cloud providers."},
                     { position_id: p.id, description: "Implementation of Atlantis as a CI/CD pipeline for terraform pull requests in AWS."}
                    ])
 
-p.skills = Skill.where(name: ['Java', 'Ruby', 'AWS', 'Terraform', 'Puppet', 'Sql', 'Jenkins', 'Kubernetes', 'Prometheus', 'Grafana', 'Consul', 'Nomad', 'Couchbase', 'Atlantis'])
+p.skills = Skill.where(name: ['Java', 'Ruby', 'AWS', 'Terraform', 'Puppet', 'Lambda', 'Jenkins', 'EKS', 'Prometheus', 'Grafana', 'Elk', 'Couchbase', 'Atlantis', 'Kafka'])
 p.save
 
 p = Position.create(
