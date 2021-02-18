@@ -365,7 +365,7 @@ sector history tspan {
     /* =1.50em */
     text-align:center;
     /*background-color: #79bbce;*/
-    color: #79bbce; /* Override this color in your theme stylesheet */
+    color: #5aaece; /* Override this color in your theme stylesheet */
 
     /**
      * Normally we’d use border-radius:100%; but instead here we just use an
@@ -391,7 +391,7 @@ sector history span {
     /* =1.50em */
     text-align:center;
     /*background-color: #79bbce;*/
-    color: #79bbce; /* Override this color in your theme stylesheet */
+    color: #40b8ce; /* Override this color in your theme stylesheet */
 
     /**
      * Normally we’d use border-radius:100%; but instead here we just use an
@@ -408,7 +408,7 @@ sector history sep {
 
 sector history span .postscript {
     font-size: 3mm;
-    color: #8da8b2;
+    color: #7b929a;
     float: left;
     display: block;
 }
